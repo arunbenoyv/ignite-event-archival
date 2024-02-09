@@ -21,6 +21,6 @@ spec:
   system: aihub-spark-ingestion
   owner: analytics
   dependsOn:
-    - component:default/spark-common
+    - component:default/spark-streaming-base
   domain: aihub-domain
   lifecycle: experimental
