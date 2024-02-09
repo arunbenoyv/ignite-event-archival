@@ -1,0 +1,26 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ignite-event-archival
+  description: |
+    Ignite event archival is an implementation of spark-streaming-base platform. It ingests events from kafka topics events, events-uploadws and alerts and stores the same in deltalake after extraction and transformation 
+  links:
+    - title: Documentation
+      url: https://confluence.harman.com/confluence/display/AIH/Ignite+Event+Archival+on+EMR+user+guide
+    - title: Repository
+      url: https://bitbucket.harman.com/projects/IC/repos/ignite-event-archival/browse
+    - title: Code coverage
+      url: http://ilsonar.redbend.com:9000/dashboard?id=com.harman.ignite%3Aignite-event-archival%3Amaster
+  annotations:
+    github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: dir:.
+    lighthouse.com/website-url: https://backstage.io
+spec:
+  type: service
+  system: aihub-spark-ingestion
+  owner: analytics
+  dependsOn:
+    - component:default/spark-common
+  domain: aihub-domain
+  lifecycle: experimental
